@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
+import uuidv4 from "uuid/v4";
 import "./Loading";
 
 const Loading = () => {
+  const id = uuidv4();
+
   useEffect(() => {
-    const stage = document.getElementById("stage");
-    const WIDTH = stage.width; // 300
-    const HEIGHT = stage.height; // 260
+    const stage = document.getElementById(id);
+    const WIDTH = stage.width;
+    const HEIGHT = stage.height;
     let angle = 0;
 
     if (typeof stage.getContext === undefined) {
@@ -22,16 +25,6 @@ const Loading = () => {
       ctx.translate(WIDTH / 2, HEIGHT / 2);
       ctx.rotate((Math.PI / 180) * angle);
 
-      // ctx.strokeStyle = "rgba(0, 0, 0, 0.3)";
-      // ctx.beginPath();
-      // ctx.moveTo(-1000, 0);
-      // ctx.lineTo(1000, 0);
-      // ctx.stroke();
-      // ctx.beginPath();
-      // ctx.moveTo(0, -1000);
-      // ctx.lineTo(0, 1000);
-      // ctx.stroke();
-
       ctx.strokeStyle = "orange";
       ctx.lineWidth = 6;
 
@@ -44,7 +37,6 @@ const Loading = () => {
     };
 
     const update = () => {
-      // ctx.clearRect(0, 0, WIDTH, HEIGHT);
       ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
       draw();
@@ -57,7 +49,7 @@ const Loading = () => {
     update();
   });
 
-  return <canvas width="300" height="260" id="stage" />;
+  return <canvas width="300" height="260" id={id} />;
 };
 
 export default Loading;
