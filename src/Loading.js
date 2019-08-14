@@ -6,8 +6,8 @@ const Loading = ({ size = 300, color = "#bebebe" }) => {
 
   useEffect(() => {
     const stage = document.getElementById(id);
-    const WIDTH = stage.width;
-    const HEIGHT = stage.height;
+    const WIDTH = size;
+    const HEIGHT = size;
     let angle = 0;
 
     if (typeof stage.getContext === undefined) {
@@ -46,7 +46,7 @@ const Loading = ({ size = 300, color = "#bebebe" }) => {
     };
 
     update();
-  });
+  }, [color, id, size]);
 
   return (
     <canvas width={size} height={size} id={id} style={{ display: "block" }} />
