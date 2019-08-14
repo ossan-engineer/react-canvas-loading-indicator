@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import uuidv4 from "uuid/v4";
-import "./Loading";
 
-const Loading = () => {
+const Loading = ({ size = 300, color = "#bebebe" }) => {
   const id = uuidv4();
 
   useEffect(() => {
@@ -18,15 +17,15 @@ const Loading = () => {
     const ctx = stage.getContext("2d");
 
     const draw = () => {
-      const OUTER_REDIUS = 60;
-      const INNER_RADIUS = 50;
+      const OUTER_REDIUS = size / 5;
+      const INNER_RADIUS = size / 6;
 
       ctx.save();
       ctx.translate(WIDTH / 2, HEIGHT / 2);
       ctx.rotate((Math.PI / 180) * angle);
 
-      ctx.strokeStyle = "orange";
-      ctx.lineWidth = 6;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = size / 50;
 
       ctx.beginPath();
       ctx.moveTo(0, -INNER_RADIUS);
@@ -49,7 +48,9 @@ const Loading = () => {
     update();
   });
 
-  return <canvas width="300" height="260" id={id} />;
+  return (
+    <canvas width={size} height={size} id={id} style={{ display: "block" }} />
+  );
 };
 
 export default Loading;
