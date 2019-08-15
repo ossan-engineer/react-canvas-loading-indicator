@@ -1,20 +1,19 @@
-import React, { useEffect } from "react";
-import uuidv4 from "uuid/v4";
+import React, { useEffect, useRef } from "react";
 
 const Loading = ({ size = 300, color = "#bebebe" }) => {
-  const id = uuidv4();
+  const canvasRef = useRef(null);
 
   useEffect(() => {
-    const stage = document.getElementById(id);
     const WIDTH = size;
     const HEIGHT = size;
     let angle = 0;
+    const canvas = canvasRef.current;
 
-    if (typeof stage.getContext === undefined) {
+    if (typeof canvas.getContext === undefined) {
       return;
     }
 
-    const ctx = stage.getContext("2d");
+    const ctx = canvas.getContext("2d");
 
     const draw = () => {
       const OUTER_REDIUS = size / 5;
@@ -46,10 +45,15 @@ const Loading = ({ size = 300, color = "#bebebe" }) => {
     };
 
     update();
-  }, [color, id, size]);
+  }, [color, size]);
 
   return (
-    <canvas width={size} height={size} id={id} style={{ display: "block" }} />
+    <canvas
+      ref={canvasRef}
+      width={size}
+      height={size}
+      style={{ display: "block" }}
+    />
   );
 };
 
