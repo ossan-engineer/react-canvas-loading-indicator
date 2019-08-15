@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/react-canvas-loading-indicator/static/js/main.a84e937c.chunk.js",
-    "main.js.map": "/react-canvas-loading-indicator/static/js/main.a84e937c.chunk.js.map",
+    "main.js": "/react-canvas-loading-indicator/static/js/main.34b1c90c.chunk.js",
+    "main.js.map": "/react-canvas-loading-indicator/static/js/main.34b1c90c.chunk.js.map",
     "runtime~main.js": "/react-canvas-loading-indicator/static/js/runtime~main.f9e8f5ad.js",
     "runtime~main.js.map": "/react-canvas-loading-indicator/static/js/runtime~main.f9e8f5ad.js.map",
-    "static/js/2.bf7b2755.chunk.js": "/react-canvas-loading-indicator/static/js/2.bf7b2755.chunk.js",
-    "static/js/2.bf7b2755.chunk.js.map": "/react-canvas-loading-indicator/static/js/2.bf7b2755.chunk.js.map",
+    "static/js/2.36f3e1bc.chunk.js": "/react-canvas-loading-indicator/static/js/2.36f3e1bc.chunk.js",
+    "static/js/2.36f3e1bc.chunk.js.map": "/react-canvas-loading-indicator/static/js/2.36f3e1bc.chunk.js.map",
     "index.html": "/react-canvas-loading-indicator/index.html",
-    "precache-manifest.0accc3b36b16b9d4279e34548237df3c.js": "/react-canvas-loading-indicator/precache-manifest.0accc3b36b16b9d4279e34548237df3c.js",
+    "precache-manifest.ea4457673cdadd42f7c9a029c88d14c7.js": "/react-canvas-loading-indicator/precache-manifest.ea4457673cdadd42f7c9a029c88d14c7.js",
     "service-worker.js": "/react-canvas-loading-indicator/service-worker.js"
   }
 }
