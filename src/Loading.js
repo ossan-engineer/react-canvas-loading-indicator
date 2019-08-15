@@ -21,14 +21,19 @@ const Loading = ({ size = 300, color = "#bebebe" }) => {
 
       ctx.save();
       ctx.translate(width / 2, height / 2);
-      ctx.rotate((Math.PI / 180) * angle);
 
       ctx.strokeStyle = color;
       ctx.lineWidth = size / 50;
 
       ctx.beginPath();
-      ctx.moveTo(0, -innerRadius);
-      ctx.lineTo(0, -outerRadius);
+      ctx.moveTo(
+        innerRadius * Math.cos((Math.PI / 180) * angle),
+        innerRadius * Math.sin((Math.PI / 180) * angle)
+      );
+      ctx.lineTo(
+        outerRadius * Math.cos((Math.PI / 180) * angle),
+        outerRadius * Math.sin((Math.PI / 180) * angle)
+      );
       ctx.stroke();
 
       ctx.restore();
