@@ -4,10 +4,10 @@ const Loading = ({ size = 300, color = "#bebebe" }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    const WIDTH = size;
-    const HEIGHT = size;
-    let angle = 0;
     const canvas = canvasRef.current;
+    const width = size;
+    const height = size;
+    let angle = 0;
 
     if (typeof canvas.getContext === undefined) {
       return;
@@ -16,19 +16,19 @@ const Loading = ({ size = 300, color = "#bebebe" }) => {
     const ctx = canvas.getContext("2d");
 
     const draw = () => {
-      const OUTER_REDIUS = size / 5;
-      const INNER_RADIUS = size / 6;
+      const outerRadius = size / 5;
+      const innerRadius = size / 6;
 
       ctx.save();
-      ctx.translate(WIDTH / 2, HEIGHT / 2);
+      ctx.translate(width / 2, height / 2);
       ctx.rotate((Math.PI / 180) * angle);
 
       ctx.strokeStyle = color;
       ctx.lineWidth = size / 50;
 
       ctx.beginPath();
-      ctx.moveTo(0, -INNER_RADIUS);
-      ctx.lineTo(0, -OUTER_REDIUS);
+      ctx.moveTo(0, -innerRadius);
+      ctx.lineTo(0, -outerRadius);
       ctx.stroke();
 
       ctx.restore();
@@ -36,7 +36,7 @@ const Loading = ({ size = 300, color = "#bebebe" }) => {
 
     const update = () => {
       ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
-      ctx.fillRect(0, 0, WIDTH, HEIGHT);
+      ctx.fillRect(0, 0, width, height);
       draw();
       angle += 12;
       setTimeout(() => {
